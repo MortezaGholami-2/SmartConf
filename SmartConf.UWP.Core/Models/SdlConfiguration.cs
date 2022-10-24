@@ -21,9 +21,9 @@ namespace DOSBox_X.Core.Models
         {
             get
             {
-                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "fullscreen");
+                ConfigurationItem item = _configurationItems.Find(x => x.Name == "fullscreen");
 
-                if (item is not null && item.Value is not null)
+                if (item != null && item.Value != null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -38,9 +38,9 @@ namespace DOSBox_X.Core.Models
         {
             get
             {
-                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "fulldouble");
+                ConfigurationItem item = _configurationItems.Find(x => x.Name == "fulldouble");
 
-                if (item is not null && item.Value is not null)
+                if (item != null && item.Value != null)
                 {
                     fullScreenDoubleBuffering = bool.Parse(item.Value);
                 }
@@ -55,9 +55,9 @@ namespace DOSBox_X.Core.Models
         {
             get
             {
-                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "fullresolution");
+                ConfigurationItem item = _configurationItems.Find(x => x.Name == "fullresolution");
 
-                if (item is not null && item.Value is not null)
+                if (item != null && item.Value != null)
                 {
                     switch (item.Value)
                     {
@@ -112,9 +112,9 @@ namespace DOSBox_X.Core.Models
         {
             get
             {
-                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "titlebar");
+                ConfigurationItem item = _configurationItems.Find(x => x.Name == "titlebar");
 
-                if (item is not null && item.Value is not null)
+                if (item != null && item.Value != null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -129,9 +129,9 @@ namespace DOSBox_X.Core.Models
         {
             get
             {
-                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "showbasic");
+                ConfigurationItem item = _configurationItems.Find(x => x.Name == "showbasic");
 
-                if (item is not null && item.Value is not null)
+                if (item != null && item.Value != null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -146,9 +146,9 @@ namespace DOSBox_X.Core.Models
         {
             get
             {
-                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "showdetails");
+                ConfigurationItem item = _configurationItems.Find(x => x.Name == "showdetails");
 
-                if (item is not null && item.Value is not null)
+                if (item != null && item.Value != null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -163,9 +163,9 @@ namespace DOSBox_X.Core.Models
         {
             get
             {
-                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "showmenu");
+                ConfigurationItem item = _configurationItems.Find(x => x.Name == "showmenu");
 
-                if (item is not null && item.Value is not null)
+                if (item != null && item.Value != null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,9 @@ namespace DOSBox_X.Core.Models
         {
             string[] lines = File.ReadAllLines(_filePath);
 
-            List<ConfigurationItem> configs = new();
+            List<ConfigurationItem> configs = new List<ConfigurationItem>();
 
-            string? group = null;
+            string group = null;
 
             foreach (string configItem in lines)
             {
@@ -36,7 +37,7 @@ namespace DOSBox_X.Core.Models
 
                 else if (configItem.Contains('='))
                 {
-                    configs.Add(new() { Group = group, Name = configItem.Remove(configItem.IndexOf('=')), Value = configItem.Remove(0, configItem.IndexOf('=') + 1) });
+                    configs.Add(new ConfigurationItem() { Group = group, Name = configItem.Remove(configItem.IndexOf('=')), Value = configItem.Remove(0, configItem.IndexOf('=') + 1) });
                 }
             }
 

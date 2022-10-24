@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Input;
-
+using DOSBox_X.Core.Models;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
@@ -77,33 +77,52 @@ namespace SmartConf.UWP.ViewModels
 
         private void OnMenuFileNewConfigFile() => MenuNavigationHelper.UpdateView(typeof(ConfigurationsPage));
 
-        private void OnMenuFileOpenConfigFile()
+        private async void OnMenuFileOpenConfigFile()
         {
-            var fileContent = string.Empty;
+            var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.List;
+            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            picker.FileTypeFilter.Add(".conf");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
 
-
-            OpenFileDialog openFileDialog = new()
+            Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
             {
-                InitialDirectory = "c:\\",
-                Filter = "DOSBox-X config files (*.conf)|*.conf|All files (*.*)|*.*",
-                FilterIndex = 1,
-                RestoreDirectory = true
-            };
-            bool? result = openFileDialog.ShowDialog();
-            if (result == true)
-            {
-                string filePath = openFileDialog.FileName;
-
-                ConfigFile configFile = new(filePath);
-                List<ConfigurationItem> configurations = configFile.ReadFile();
-                _navigationService.NavigateTo(typeof(MainViewModel).FullName, configurations, true);
-                //    //LoadConfigurations(configurations);
-
-
-
-
+                // Application now has read/write access to the picked file
+                MenuNavigationHelper.UpdateView(typeof(ConfigurationsPage));
+                //this.textBlock.Text = "Picked photo: " + file.Name;
             }
-            MenuNavigationHelper.UpdateView(typeof(ConfigurationsPage));
+            else
+            {
+                //this.textBlock.Text = "Operation cancelled.";
+            }
+
+            //var fileContent = string.Empty;
+
+
+            //OpenFileDialog openFileDialog = new OpenFileDialog()
+            //{
+            //    InitialDirectory = "c:\\",
+            //    Filter = "DOSBox-X config files (*.conf)|*.conf|All files (*.*)|*.*",
+            //    FilterIndex = 1,
+            //    RestoreDirectory = true
+            //};
+            //bool? result = openFileDialog.ShowDialog();
+            //if (result == true)
+            //{
+            //    string filePath = openFileDialog.FileName;
+
+            //    ConfigFile configFile = new ConfigFile(filePath);
+            //    List<ConfigurationItem> configurations = configFile.ReadFile();
+            //    //_navigationService.NavigateTo(typeof(MainViewModel).FullName, configurations, true);
+            //    //    //LoadConfigurations(configurations);
+
+
+
+
+            //}
+            
         }
 
         private void OnMenuViewsMain() => MenuNavigationHelper.UpdateView(typeof(MainPage));
