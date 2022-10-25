@@ -189,10 +189,10 @@
   <data name="AppDisplayName" xml:space="preserve">
     <value>SmartConf.WPF</value>
   </data>
-  <data name="ShellMenuItemFileNewConfigFile" xml:space="preserve">
+  <data name="ShellMenuItemFileNewConfigFilePageHeader" xml:space="preserve">
     <value>_New Config File</value>
   </data>
-  <data name="ShellMenuItemFileOpenConfigFile" xml:space="preserve">
+  <data name="ShellMenuItemFileOpenConfigFilePageHeader" xml:space="preserve">
     <value>_Open Config File...</value>
   </data>
 </root>

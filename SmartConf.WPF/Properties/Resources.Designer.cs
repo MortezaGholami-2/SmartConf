@@ -225,18 +225,18 @@ namespace SmartConf.WPF.Properties {
         /// <summary>
         ///   Looks up a localized string similar to _New Config File.
         /// </summary>
-        public static string ShellMenuItemFileNewConfigFile {
+        public static string ShellMenuItemFileNewConfigFilePageHeader {
             get {
-                return ResourceManager.GetString("ShellMenuItemFileNewConfigFile", resourceCulture);
+                return ResourceManager.GetString("ShellMenuItemFileNewConfigFilePageHeader", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to _Open Config File....
         /// </summary>
-        public static string ShellMenuItemFileOpenConfigFile {
+        public static string ShellMenuItemFileOpenConfigFilePageHeader {
             get {
-                return ResourceManager.GetString("ShellMenuItemFileOpenConfigFile", resourceCulture);
+                return ResourceManager.GetString("ShellMenuItemFileOpenConfigFilePageHeader", resourceCulture);
             }
         }
         

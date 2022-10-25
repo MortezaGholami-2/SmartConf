@@ -59,8 +59,8 @@
                     </Grid.RowDefinitions>
                     <Menu Grid.Row="0" Focusable="False">
                         <MenuItem Header="{x:Static properties:Resources.ShellMenuFileHeader}" AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Self}}">
-                            <MenuItem Header="{x:Static properties:Resources.ShellMenuItemFileNewConfigFile}" Command="{Binding MenuFileSettingsCommand}" AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Self}}" />
-                            <MenuItem Header="{x:Static properties:Resources.ShellMenuItemFileOpenConfigFile}" Command="{Binding MenuFileOpenConfigFileCommand}" AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Self}}" />
+                            <MenuItem Header="{x:Static properties:Resources.ShellMenuItemFileNewConfigFilePageHeader}" Command="{Binding MenuFileSettingsCommand}" AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Self}}" />
+                            <MenuItem Header="{x:Static properties:Resources.ShellMenuItemFileOpenConfigFilePageHeader}" Command="{Binding MenuFileOpenConfigFileCommand}" AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Self}}" />
                             <MenuItem Header="{x:Static properties:Resources.ShellMenuItemFileSettingsPageHeader}" Command="{Binding MenuFileSettingsCommand}" AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Self}}" />
                             <Separator />
                             <MenuItem Header="{x:Static properties:Resources.ShellMenuItemFileExitHeader}" Command="{Binding MenuFileExitCommand}" AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Self}}" />
