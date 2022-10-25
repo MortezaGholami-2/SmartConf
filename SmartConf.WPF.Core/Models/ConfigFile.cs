@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DOSBox_X.Core.Models
+namespace SmartConf.WPF.Core.Models
 {
     public class ConfigFile
     {
@@ -20,15 +19,13 @@ namespace DOSBox_X.Core.Models
 
         }
 
-        public async List<ConfigurationItem> ReadFile()
+        public List<ConfigurationItem> ReadFile()
         {
-            string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
-
             string[] lines = File.ReadAllLines(_filePath);
 
-            List<ConfigurationItem> configs = new List<ConfigurationItem>();
+            List<ConfigurationItem> configs = new();
 
-            string group = null;
+            string? group = null;
 
             foreach (string configItem in lines)
             {
@@ -39,7 +36,7 @@ namespace DOSBox_X.Core.Models
 
                 else if (configItem.Contains('='))
                 {
-                    configs.Add(new ConfigurationItem() { Group = group, Name = configItem.Remove(configItem.IndexOf('=')), Value = configItem.Remove(0, configItem.IndexOf('=') + 1) });
+                    configs.Add(new() { Group = group, Name = configItem.Remove(configItem.IndexOf('=')), Value = configItem.Remove(0, configItem.IndexOf('=') + 1) });
                 }
             }
 

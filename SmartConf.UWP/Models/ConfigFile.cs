@@ -1,11 +1,12 @@
-﻿using System;
+﻿using SmartConf.UWP.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DOSBox_X.Core.Models
+namespace SmartConf.UWP.Models
 {
     public class ConfigFile
     {
@@ -22,7 +23,9 @@ namespace DOSBox_X.Core.Models
 
         public async List<ConfigurationItem> ReadFile()
         {
-            string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
+            Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            Windows.Storage.StorageFile sampleFile = await storageFolder.GetFileAsync("sample.txt");
+            string text = await Windows.Storage.FileIO.ReadTextAsync(_filePath);
 
             string[] lines = File.ReadAllLines(_filePath);
 

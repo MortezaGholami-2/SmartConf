@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace SmartConf.UWP.Core.Models
+namespace SmartConf.WPF.Core.Models
 {
     public class SdlConfiguration
     {
@@ -21,9 +21,9 @@ namespace SmartConf.UWP.Core.Models
         {
             get
             {
-                ConfigurationItem item = _configurationItems.Find(x => x.Name == "fullscreen");
+                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "fullscreen");
 
-                if (item != null && item.Value != null)
+                if (item is not null && item.Value is not null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -38,9 +38,9 @@ namespace SmartConf.UWP.Core.Models
         {
             get
             {
-                ConfigurationItem item = _configurationItems.Find(x => x.Name == "fulldouble");
+                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "fulldouble");
 
-                if (item != null && item.Value != null)
+                if (item is not null && item.Value is not null)
                 {
                     fullScreenDoubleBuffering = bool.Parse(item.Value);
                 }
@@ -55,9 +55,9 @@ namespace SmartConf.UWP.Core.Models
         {
             get
             {
-                ConfigurationItem item = _configurationItems.Find(x => x.Name == "fullresolution");
+                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "fullresolution");
 
-                if (item != null && item.Value != null)
+                if (item is not null && item.Value is not null)
                 {
                     switch (item.Value)
                     {
@@ -112,9 +112,9 @@ namespace SmartConf.UWP.Core.Models
         {
             get
             {
-                ConfigurationItem item = _configurationItems.Find(x => x.Name == "titlebar");
+                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "titlebar");
 
-                if (item != null && item.Value != null)
+                if (item is not null && item.Value is not null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -129,9 +129,9 @@ namespace SmartConf.UWP.Core.Models
         {
             get
             {
-                ConfigurationItem item = _configurationItems.Find(x => x.Name == "showbasic");
+                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "showbasic");
 
-                if (item != null && item.Value != null)
+                if (item is not null && item.Value is not null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -146,9 +146,9 @@ namespace SmartConf.UWP.Core.Models
         {
             get
             {
-                ConfigurationItem item = _configurationItems.Find(x => x.Name == "showdetails");
+                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "showdetails");
 
-                if (item != null && item.Value != null)
+                if (item is not null && item.Value is not null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }
@@ -163,9 +163,9 @@ namespace SmartConf.UWP.Core.Models
         {
             get
             {
-                ConfigurationItem item = _configurationItems.Find(x => x.Name == "showmenu");
+                ConfigurationItem? item = _configurationItems.Find(x => x.Name == "showmenu");
 
-                if (item != null && item.Value != null)
+                if (item is not null && item.Value is not null)
                 {
                     fullScreen = bool.Parse(item.Value);
                 }

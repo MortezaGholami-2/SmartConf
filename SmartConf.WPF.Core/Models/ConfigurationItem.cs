@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartConf.UWP.Core.Models
+namespace SmartConf.WPF.Core.Models
 {
     public class ConfigurationItem
     {

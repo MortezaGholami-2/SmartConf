@@ -89,8 +89,11 @@ namespace SmartConf.UWP.ViewModels
             Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
             if (file != null)
             {
+                string filePath = file.Path;
+                ConfigFile configFile = new ConfigFile(filePath);
+                List<ConfigurationItem> configurations = configFile.ReadFile();
                 // Application now has read/write access to the picked file
-                MenuNavigationHelper.UpdateView(typeof(ConfigurationsPage));
+                MenuNavigationHelper.UpdateView(typeof(ConfigurationsPage), configurations);
                 //this.textBlock.Text = "Picked photo: " + file.Name;
             }
             else
@@ -111,10 +114,8 @@ namespace SmartConf.UWP.ViewModels
             //bool? result = openFileDialog.ShowDialog();
             //if (result == true)
             //{
-            //    string filePath = openFileDialog.FileName;
 
-            //    ConfigFile configFile = new ConfigFile(filePath);
-            //    List<ConfigurationItem> configurations = configFile.ReadFile();
+            //    
             //    //_navigationService.NavigateTo(typeof(MainViewModel).FullName, configurations, true);
             //    //    //LoadConfigurations(configurations);
 
