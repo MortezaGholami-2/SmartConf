@@ -39,7 +39,7 @@ namespace SmartConf.WPF.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SmartConf.WPF.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -225,18 +225,18 @@ namespace SmartConf.WPF.Properties {
         /// <summary>
         ///   Looks up a localized string similar to _New Config File.
         /// </summary>
-        public static string ShellMenuItemFileNewConfigFilePageHeader {
+        public static string ShellMenuItemFileNewConfigFileHeader {
             get {
-                return ResourceManager.GetString("ShellMenuItemFileNewConfigFilePageHeader", resourceCulture);
+                return ResourceManager.GetString("ShellMenuItemFileNewConfigFileHeader", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Open Config File....
+        ///   Looks up a localized string similar to _Open Config File.
         /// </summary>
-        public static string ShellMenuItemFileOpenConfigFilePageHeader {
+        public static string ShellMenuItemFileOpenConfigFileHeader {
             get {
-                return ResourceManager.GetString("ShellMenuItemFileOpenConfigFilePageHeader", resourceCulture);
+                return ResourceManager.GetString("ShellMenuItemFileOpenConfigFileHeader", resourceCulture);
             }
         }
         
@@ -286,11 +286,74 @@ namespace SmartConf.WPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WebView.
+        /// </summary>
+        public static string ShellMenuItemViewsWebViewPageHeader {
+            get {
+                return ResourceManager.GetString("ShellMenuItemViewsWebViewPageHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Views.
         /// </summary>
         public static string ShellMenuViewsHeader {
             get {
                 return ResourceManager.GetString("ShellMenuViewsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back (Alt + Left).
+        /// </summary>
+        public static string WebViewPageBackButtonTooltip {
+            get {
+                return ResourceManager.GetString("WebViewPageBackButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page failed to load. Check connection and retry..
+        /// </summary>
+        public static string WebViewPageFaildedMessage {
+            get {
+                return ResourceManager.GetString("WebViewPageFaildedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forward (Alt + Right).
+        /// </summary>
+        public static string WebViewPageForwardButtonTooltip {
+            get {
+                return ResourceManager.GetString("WebViewPageForwardButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        public static string WebViewPageLoadingText {
+            get {
+                return ResourceManager.GetString("WebViewPageLoadingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open in browser (Ctrl + T).
+        /// </summary>
+        public static string WebViewPageOpenInBrowserButtonTooltip {
+            get {
+                return ResourceManager.GetString("WebViewPageOpenInBrowserButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh (F5).
+        /// </summary>
+        public static string WebViewPageRefreshButtonTooltip {
+            get {
+                return ResourceManager.GetString("WebViewPageRefreshButtonTooltip", resourceCulture);
             }
         }
     }

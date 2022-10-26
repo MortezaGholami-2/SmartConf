@@ -10,13 +10,13 @@
   IgnorableNamespaces="uap rescap genTemplate com desktop">
 
   <Identity
-    Name="A284ADA5-BCF2-4311-B979-D7273624F7B4"
-    Publisher="CN=Morteza Gholami"
+    Name="EF3B55A2-2405-4EF2-9F79-98BD2C259B8B"
+    Publisher="CN=Morteza"
     Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>SmartConf.WPF.Packaging</DisplayName>
-    <PublisherDisplayName>Morteza Gholami</PublisherDisplayName>
+    <PublisherDisplayName>Morteza</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -47,14 +47,14 @@
         <com:Extension Category="windows.comServer">
           <com:ComServer>
             <com:ExeServer Executable="SmartConf.WPF.exe" Arguments="-ToastActivated" DisplayName="Toast activator">
-              <com:Class Id="C3D87A36-F521-4179-98F0-0204743B31B9" DisplayName="Toast activator"/>
+              <com:Class Id="03B1E65F-1BF0-4A0F-9A94-9AC914C8A063" DisplayName="Toast activator"/>
             </com:ExeServer>
           </com:ComServer>
         </com:Extension>
 
         <!--Specify which CLSID to activate when toast clicked-->
         <desktop:Extension Category="windows.toastNotificationActivation">
-          <desktop:ToastNotificationActivation ToastActivatorCLSID="C3D87A36-F521-4179-98F0-0204743B31B9" />
+          <desktop:ToastNotificationActivation ToastActivatorCLSID="03B1E65F-1BF0-4A0F-9A94-9AC914C8A063" />
         </desktop:Extension>
       </Extensions>
     </Application>

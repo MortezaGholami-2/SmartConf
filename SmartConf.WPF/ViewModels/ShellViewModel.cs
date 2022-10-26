@@ -3,9 +3,8 @@ using System.Windows.Input;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Win32;
+
 using SmartConf.WPF.Contracts.Services;
-using SmartConf.WPF.Core.Models;
 using SmartConf.WPF.Properties;
 
 namespace SmartConf.WPF.ViewModels;
@@ -20,17 +19,21 @@ public class ShellViewModel : ObservableObject
     private readonly IRightPaneService _rightPaneService;
 
     private RelayCommand _goBackCommand;
+    private ICommand _menuFileNewConfigFileCommand;
     private ICommand _menuFileOpenConfigFileCommand;
     private ICommand _menuFileSettingsCommand;
     private ICommand _menuViewsListDetailsCommand;
     private ICommand _menuViewsContentGridCommand;
     private ICommand _menuViewsDataGridCommand;
+    private ICommand _menuViewsWebViewCommand;
     private ICommand _menuViewsMainCommand;
     private ICommand _menuFileExitCommand;
     private ICommand _loadedCommand;
     private ICommand _unloadedCommand;
 
     public RelayCommand GoBackCommand => _goBackCommand ?? (_goBackCommand = new RelayCommand(OnGoBack, CanGoBack));
+
+    public ICommand MenuFileNewConfigFileCommand => _menuFileNewConfigFileCommand ?? (_menuFileNewConfigFileCommand = new RelayCommand(OnMenuFileNewConfigFile));
 
     public ICommand MenuFileOpenConfigFileCommand => _menuFileOpenConfigFileCommand ?? (_menuFileOpenConfigFileCommand = new RelayCommand(OnMenuFileOpenConfigFile));
 
@@ -70,33 +73,10 @@ public class ShellViewModel : ObservableObject
         GoBackCommand.NotifyCanExecuteChanged();
     }
 
+    private void OnMenuFileNewConfigFile()
+        => _navigationService.NavigateTo(typeof(ConfigurationsViewModel).FullName, null, true);
     private void OnMenuFileOpenConfigFile()
-    {
-        var fileContent = string.Empty;
-
-
-        OpenFileDialog openFileDialog = new()
-        {
-            InitialDirectory = "c:\\",
-            Filter = "DOSBox-X config files (*.conf)|*.conf|All files (*.*)|*.*",
-            FilterIndex = 1,
-            RestoreDirectory = true
-        };
-        bool? result = openFileDialog.ShowDialog();
-        if (result == true)
-        {
-            string filePath = openFileDialog.FileName;
-
-            ConfigFile configFile = new(filePath);
-            List<ConfigurationItem> configurations = configFile.ReadFile();
-            _navigationService.NavigateTo(typeof(MainViewModel).FullName, configurations, true);
-            //    //LoadConfigurations(configurations);
-
-
-
-
-        }
-    }
+        => _navigationService.NavigateTo(typeof(ConfigurationsViewModel).FullName, null, true);
 
     private void OnMenuFileExit()
         => Application.Current.Shutdown();
@@ -105,6 +85,11 @@ public class ShellViewModel : ObservableObject
 
     private void OnMenuViewsMain()
         => _navigationService.NavigateTo(typeof(MainViewModel).FullName, null, true);
+
+    public ICommand MenuViewsWebViewCommand => _menuViewsWebViewCommand ?? (_menuViewsWebViewCommand = new RelayCommand(OnMenuViewsWebView));
+
+    private void OnMenuViewsWebView()
+        => _navigationService.NavigateTo(typeof(WebViewViewModel).FullName, null, true);
 
     public ICommand MenuViewsDataGridCommand => _menuViewsDataGridCommand ?? (_menuViewsDataGridCommand = new RelayCommand(OnMenuViewsDataGrid));
 

@@ -168,6 +168,27 @@
   <data name="DataGridPageTitle" xml:space="preserve">
     <value>DataGrid</value>
   </data>
+  <data name="ShellMenuItemViewsWebViewPageHeader" xml:space="preserve">
+    <value>WebView</value>
+  </data>
+  <data name="WebViewPageBackButtonTooltip" xml:space="preserve">
+    <value>Back (Alt + Left)</value>
+  </data>
+  <data name="WebViewPageForwardButtonTooltip" xml:space="preserve">
+    <value>Forward (Alt + Right)</value>
+  </data>
+  <data name="WebViewPageLoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="WebViewPageFaildedMessage" xml:space="preserve">
+    <value>Page failed to load. Check connection and retry.</value>
+  </data>
+  <data name="WebViewPageRefreshButtonTooltip" xml:space="preserve">
+    <value>Refresh (F5)</value>
+  </data>
+  <data name="WebViewPageOpenInBrowserButtonTooltip" xml:space="preserve">
+    <value>Open in browser (Ctrl + T)</value>
+  </data>
   <data name="ShellMenuItemViewsMainPageHeader" xml:space="preserve">
     <value>Main</value>
   </data>
@@ -189,10 +210,10 @@
   <data name="AppDisplayName" xml:space="preserve">
     <value>SmartConf.WPF</value>
   </data>
-  <data name="ShellMenuItemFileNewConfigFilePageHeader" xml:space="preserve">
+  <data name="ShellMenuItemFileNewConfigFileHeader" xml:space="preserve">
     <value>_New Config File</value>
   </data>
-  <data name="ShellMenuItemFileOpenConfigFilePageHeader" xml:space="preserve">
-    <value>_Open Config File...</value>
+  <data name="ShellMenuItemFileOpenConfigFileHeader" xml:space="preserve">
+    <value>_Open Config File</value>
   </data>
 </root>

@@ -21,11 +21,10 @@ namespace SmartConf.WPF.Views
     /// </summary>
     public partial class ConfigurationsPage : Page
     {
-        public ConfigurationsViewModel ViewModel { get; } = new ConfigurationsViewModel();
-
-        public ConfigurationsPage()
+        public ConfigurationsPage(ConfigurationsViewModel viewModel)
         {
             InitializeComponent();
+            DataContext = viewModel;
         }
     }
 }

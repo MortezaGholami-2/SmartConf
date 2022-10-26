@@ -10,10 +10,9 @@
 
     <Grid>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Configurations" FontSize="40"/>
-            
-            <TextBlock Text="hjhjkjk"/>
-            <TextBlock Text="{Binding Zzzz}"/>
+            <TextBlock FontSize="24" Text="dfdfdsf"/>
+            <TextBlock FontSize="24" Text="dfdfdsf"/>
+            <TextBlock FontSize="24" Text="dfdfdsf"/>
         </StackPanel>
     </Grid>
 </Page>
