@@ -3,8 +3,9 @@ using System.Windows.Input;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-
+using Microsoft.Win32;
 using SmartConf.WPF.Contracts.Services;
+using SmartConf.WPF.Core.Models;
 using SmartConf.WPF.Properties;
 
 namespace SmartConf.WPF.ViewModels;
@@ -76,7 +77,32 @@ public class ShellViewModel : ObservableObject
     private void OnMenuFileNewConfigFile()
         => _navigationService.NavigateTo(typeof(ConfigurationsViewModel).FullName, null, true);
     private void OnMenuFileOpenConfigFile()
-        => _navigationService.NavigateTo(typeof(ConfigurationsViewModel).FullName, null, true);
+    {
+        var fileContent = string.Empty;
+
+
+        OpenFileDialog openFileDialog = new()
+        {
+            InitialDirectory = "c:\\",
+            Filter = "DOSBox-X config files (*.conf)|*.conf|All files (*.*)|*.*",
+            FilterIndex = 1,
+            RestoreDirectory = true
+        };
+        bool? result = openFileDialog.ShowDialog();
+        if (result == true)
+        {
+            string filePath = openFileDialog.FileName;
+
+            ConfigFile configFile = new(filePath);
+            List<ConfigurationItem> configurations = configFile.ReadFile();
+            _navigationService.NavigateTo(typeof(ConfigurationsViewModel).FullName, configurations, true);
+            //    //LoadConfigurations(configurations);
+
+
+
+
+        }
+    }
 
     private void OnMenuFileExit()
         => Application.Current.Shutdown();
